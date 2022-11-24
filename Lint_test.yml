@@ -1,0 +1,8 @@
+lint:
+  stage: lint 
+  image: "add image here"
+  before_script:
+      "install image lint lib"
+  script:
+    echo "Done"
+

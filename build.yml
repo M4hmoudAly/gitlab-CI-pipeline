@@ -1,0 +1,9 @@
+build:
+  stage: build
+  image: docker/compose:latest
+  services:
+    - docker:dind
+  script: 
+    - docker login -u "UserName" -p "Password" registry.gitlab.com
+    - docker build . -t registry."Add git URL":$CI_COMMIT_SHA
+    - docker push registry."Add git URL":$CI_COMMIT_SHA
